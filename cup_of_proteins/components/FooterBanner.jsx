@@ -22,7 +22,7 @@ const FooterBanner = ({footerbanner:{desc,discount,largeText1,largeText2,saleTim
                <button type='button'>{buttonText}</button>
              </Link>
         </div>
-         <Image src={'/protein.png'} width={300} height={300} className="footer-banner-image"/>
+         <Image src={'/protein.png'} width={300} height={300} className="footer-banner-image" alt="protein"/>
 
        
        </div>

@@ -16,7 +16,7 @@ const Home = ({products,bannerData}) => {
           </h2>
           <p>Protein Powders of many variations</p>
             <div className='products-container'>
-              {products?.map((product)=>(<Product key={product.id} product={product}/>))}
+              {products?.map((product)=>(<Product key={product._id} product={product}/>))}
             </div>
           </div>
 

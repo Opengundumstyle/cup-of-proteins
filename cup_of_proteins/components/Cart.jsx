@@ -2,7 +2,7 @@ import React,{useRef} from 'react'
 import Link from 'next/link'
 import { AiOutlinePlus,AiOutlineMinus,AiOutlineLeft,AiOutlineShopping } from 'react-icons/ai'
 import {TiDeleteOutline} from 'react-icons/ti'
-import { Toast } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useStateContext } from '../context/StateContext'
 import { urlFor } from '../lib/client'
 import product from '@/silver-marten/schemas/product'
@@ -11,6 +11,7 @@ import getStripe from '../lib/getStripe'
 const Cart = () => {
 
   const cartRef = useRef()
+
   const {totalPrice,totalQuantities,cartItems,setShowCart,toggleCartItemQuantity,onRemove} = useStateContext()
 
   const handleCheckOut = async () =>{
@@ -62,7 +63,7 @@ const Cart = () => {
              )}
              <div className='prduct-container'>
                 {cartItems.length >= 1 && cartItems.map((item)=>(
-                      <div className='product' key={product._id}>
+                      <div className='product' key={item._id}>
                            <img src={urlFor(item?.image[0])} className="cart-product-image"/>
                            <div className='item-desc'>
                               <div className='flex top'>
