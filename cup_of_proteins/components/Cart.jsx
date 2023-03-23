@@ -10,7 +10,7 @@ import product from '@/silver-marten/schemas/product'
 const Cart = () => {
 
   const cartRef = useRef()
-  const {totalPrice,totalQuantities,cartItems,setShowCart,toggleCartItemQuantity} = useStateContext()
+  const {totalPrice,totalQuantities,cartItems,setShowCart,toggleCartItemQuantity,onRemove} = useStateContext()
 
   return (
     <div className='cart-wrapper' ref={cartRef}>
@@ -57,7 +57,7 @@ const Cart = () => {
                                    <button 
                                     type='button'
                                     className='remove-item'
-                                    onClick=''> 
+                                    onClick={()=>onRemove(item._id)}> 
                                       <TiDeleteOutline/>
                                    </button>
                                </div>
